@@ -137,47 +137,20 @@ export function GalleryGrid({ images }: GalleryGridProps) {
 
 // Gallery Images Data
 export const galleryImages: GalleryImage[] = [
-    // Supermarket Racks
-    { src: '/images/gallery/supermarket-racks/10Center Rack.JPG', alt: 'Center Aisle Rack', category: 'Supermarket Racks' },
-    { src: '/images/gallery/supermarket-racks/12Corner Rack.JPG', alt: 'Corner Display Rack', category: 'Supermarket Racks' },
-    { src: '/images/gallery/supermarket-racks/14Masala Rack.JPG', alt: 'Masala Display Rack', category: 'Supermarket Racks' },
-    { src: '/images/gallery/supermarket-racks/15Oil Rack.JPG', alt: 'Heavy Duty Oil Rack', category: 'Supermarket Racks' },
-    { src: '/images/gallery/supermarket-racks/17Snacks Rack.JPG', alt: 'Snacks Display Unit', category: 'Supermarket Racks' },
-    { src: '/images/gallery/supermarket-racks/8Wall Channel Rack.JPG', alt: 'Wall Channel Rack', category: 'Supermarket Racks' },
+    { src: '/images/gallery/gallery/IMG-20161230-WA0043.jpg', alt: 'Fresh Produce Rack', category: 'Fruit & Vegetable Racks' },
+    { src: '/images/gallery/gallery/glass-showcase-vegetable-racks.jpg', alt: 'Glass Showcase Vegetable Rack', category: 'Fruit & Vegetable Racks' },
 
-    // Hyper Store Racks
-    { src: '/images/gallery/hyper-store-racks/Center Hyper Storage Rack.jpg', alt: 'Hyper Store Center Rack', category: 'Hyper Store Racks' },
-    { src: '/images/gallery/hyper-store-racks/Wall Hyper Storage Rack.jpg', alt: 'Hyper Wall Storage', category: 'Hyper Store Racks' },
-    { src: '/images/gallery/hyper-store-racks/IMG20220715134153.jpg', alt: 'Multi-Tier Storage System', category: 'Hyper Store Racks' },
+    { src: '/images/gallery/gallery/bagrack.jpg', alt: 'Bag Display Rack', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/gallery/chappel-rack.jpg', alt: 'Footwear Display Rack', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/gallery/shoe-rack.jpg', alt: 'Shoe Rack', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/gallery/stationary-rack.jpg', alt: 'Stationery Display Rack', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/gallery/stationary.jpg', alt: 'Stationery Items Rack', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/gallery/toys-hanger-rack.jpg', alt: 'Toys Hanger Rack', category: 'Fancy Store Racks' },
 
-    // Fruit & Vegetable Racks
-    { src: '/images/gallery/fruit-vegetable-racks/IMG-20161230-WA0043.jpg', alt: 'Fresh Produce Rack', category: 'Fruit & Vegetable Racks' },
-    { src: '/images/gallery/fruit-vegetable-racks/IMG-20231227-WA0009.jpg', alt: 'SS Vegetable Rack', category: 'Fruit & Vegetable Racks' },
-    { src: '/images/gallery/fruit-vegetable-racks/IMG-20240503-WA0024.jpg', alt: 'Wall Vegetable Display', category: 'Fruit & Vegetable Racks' },
+    { src: '/images/gallery/gallery/clock house.jpg', alt: 'Clock House Display', category: 'Pharmacy Racks' },
+    { src: '/images/gallery/gallery/clock-house.jpg', alt: 'Clock House Unit', category: 'Pharmacy Racks' },
 
-    // Electronic Racks
-    { src: '/images/gallery/electronic-racks/IMG20220616195407.jpg', alt: 'Electronics Display', category: 'Electronic Racks' },
-    { src: '/images/gallery/electronic-racks/IMG20220622131431.jpg', alt: 'Glass Display Unit', category: 'Electronic Racks' },
-    { src: '/images/gallery/electronic-racks/IMG20220719090212.jpg', alt: 'Appliance Rack', category: 'Electronic Racks' },
+    { src: '/images/gallery/gallery/plates showcase.jpg', alt: 'Plates Showcase', category: 'Supermarket Racks' },
 
-    // Pharmacy Racks
-    { src: '/images/gallery/pharmacy-racks/IMG-20190214-WA0015.jpg', alt: 'Medical Store Rack', category: 'Pharmacy Racks' },
-    { src: '/images/gallery/pharmacy-racks/IMG20221206140151.jpg', alt: 'Pharmacy Display Unit', category: 'Pharmacy Racks' },
-    { src: '/images/gallery/pharmacy-racks/IMG20230528111627.jpg', alt: 'Glass Pharmacy Rack', category: 'Pharmacy Racks' },
-
-    // Fancy Store Racks
-    { src: '/images/gallery/fancy-store-racks/IMG-20240406-WA0003.jpg', alt: 'Fancy Store Display', category: 'Fancy Store Racks' },
-    { src: '/images/gallery/fancy-store-racks/IMG20220623111501.jpg', alt: 'Stationery Rack', category: 'Fancy Store Racks' },
-    { src: '/images/gallery/fancy-store-racks/IMG20230528111134.jpg', alt: 'Shop Counter Display', category: 'Fancy Store Racks' },
-
-    // Garments Racks
-    { src: '/images/gallery/garments-racks/IMG20210910165001.jpg', alt: 'Garment Display', category: 'Garments Racks' },
-    { src: '/images/gallery/garments-racks/IMG-20210407-WA0003.jpg', alt: 'Step Down Rack', category: 'Garments Racks' },
-    { src: '/images/gallery/garments-racks/IMG20211126130614.jpg', alt: 'Ladder Display Rack', category: 'Garments Racks' },
-    { src: '/images/gallery/garments-racks/IMG20221218134139.jpg', alt: 'Wooden Boutique Rack', category: 'Garments Racks' },
-
-    // Heavy Duty Racks
-    { src: '/images/gallery/heavy-duty-racks/IMG-20211221-WA0011.jpg', alt: 'Heavy Duty Storage', category: 'Heavy Duty Racks' },
-    { src: '/images/gallery/heavy-duty-racks/IMG-20211230-WA0005.jpg', alt: 'Industrial Warehouse Rack', category: 'Heavy Duty Racks' },
-    { src: '/images/gallery/heavy-duty-racks/IMG-20240220-WA0007.jpg', alt: 'Pallet Racking System', category: 'Heavy Duty Racks' },
+    { src: '/images/gallery/gallery/sports-shop hanger.jpg', alt: 'Sports Shop Hanger', category: 'Garments Racks' },
 ];
