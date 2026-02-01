@@ -7,8 +7,10 @@ import Image from 'next/image';
 const googleReviews = [
     {
         id: 'gr-1',
-        name: 'Customer Review 1',
+        name: 'Arun Ram',
         rating: 5,
+        date: '3 months ago',
+        content: 'We purchased supermarket display racks for Sundaram Supermarket, and the overall experience has been excellent. The racks are durable, well-built, and designed to maximize space utilization. The quality of the materials and the finishing give a professional look to our store layout. Product delivery was prompt, and installation was handled efficiently. These racks have significantly improved the display and accessibility of our products. We are very satisfied with our purchase and would recommend these racks to other retailers.',
         reviewLink: 'https://maps.app.goo.gl/7bsrgFjsMPqEanRF7',
         images: [
             '/images/reviews/review-1/unnamed-2.jpg.jpeg',
@@ -19,8 +21,10 @@ const googleReviews = [
     },
     {
         id: 'gr-2',
-        name: 'Customer Review 2',
+        name: 'Mohamed Bilal',
         rating: 5,
+        date: '3 weeks ago',
+        content: 'Best quality, best products, friendly staffs support. I have done my supermarket in inamkulathur branch by support of Mr.hariharan (AK racks).',
         reviewLink: 'https://maps.app.goo.gl/JUgBimWf3tyRyMGY8',
         images: [
             '/images/reviews/review-2/unnamed-2.jpg.jpeg',
@@ -39,7 +43,7 @@ function StarRating({ rating }: { rating: number }) {
             {[...Array(5)].map((_, i) => (
                 <svg
                     key={i}
-                    className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-slate-300'}`}
+                    className={`w-4 h-4 ${i < rating ? 'text-yellow-400' : 'text-slate-300'}`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                 >
@@ -85,11 +89,11 @@ function GoogleReviewCard({ review, index }: GoogleReviewCardProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.15 }}
-            className="group"
+            className="group h-full"
         >
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-orange-200">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-orange-200 h-full flex flex-col">
                 {/* Image Gallery */}
-                <div className="grid grid-cols-2 gap-1">
+                <div className="grid grid-cols-2 gap-1 mb-4">
                     {review.images.map((image, imgIndex) => (
                         <div key={imgIndex} className="relative aspect-square overflow-hidden">
                             <Image
@@ -105,22 +109,36 @@ function GoogleReviewCard({ review, index }: GoogleReviewCardProps) {
                 </div>
 
                 {/* Review Info */}
-                <div className="p-5">
-                    {/* Google Badge & Stars */}
-                    <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                            <GoogleIcon />
-                            <span className="text-sm text-slate-500 font-medium">Google Review</span>
+                <div className="p-6 flex-grow flex flex-col">
+                    {/* Header: Name, Date, Badge */}
+                    <div className="flex items-start justify-between mb-4">
+                        <div>
+                            <h4 className="font-bold text-slate-800 text-lg mb-1">{review.name}</h4>
+                            <div className="flex items-center gap-2 text-sm text-slate-500">
+                                <span>{review.date}</span>
+                                <span>•</span>
+                                <div className="flex items-center gap-1">
+                                    <GoogleIcon />
+                                    <span className="font-medium">Google</span>
+                                </div>
+                            </div>
                         </div>
-                        <StarRating rating={review.rating} />
+                        <div className="bg-orange-50 px-2 py-1 rounded-lg">
+                            <StarRating rating={review.rating} />
+                        </div>
                     </div>
+
+                    {/* Review Text */}
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-4 hover:line-clamp-none transition-all duration-300">
+                        {review.content}
+                    </p>
 
                     {/* View on Google Link */}
                     <a
                         href={review.reviewLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors"
+                        className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors mt-auto pt-4 border-t border-slate-100 w-full"
                     >
                         <span>View on Google Maps</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +165,7 @@ export function GoogleReviewsSection() {
             </div>
 
             {/* Google Review Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
                 {googleReviews.map((review, index) => (
                     <GoogleReviewCard key={review.id} review={review} index={index} />
                 ))}
