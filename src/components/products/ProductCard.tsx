@@ -2,16 +2,16 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Product } from '@/lib/products';
 import { siteConfig } from '@/lib/seo';
 
 interface ProductCardProps {
     product: Product;
     index?: number;
+    onDetailsClick?: (product: Product) => void;
 }
 
-export function ProductCard({ product, index = 0 }: ProductCardProps) {
+export function ProductCard({ product, index = 0, onDetailsClick }: ProductCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -57,12 +57,12 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                             </svg>
                             Enquire
                         </a>
-                        <Link
-                            href={`/products/${product.categorySlug}`}
-                            className="px-4 py-2.5 border border-slate-200 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors text-sm font-medium"
+                        <button
+                            onClick={() => onDetailsClick?.(product)}
+                            className="px-4 py-2.5 border border-slate-200 rounded-xl text-slate-600 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-600 transition-colors text-sm font-medium"
                         >
                             Details
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </div>

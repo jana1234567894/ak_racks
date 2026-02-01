@@ -8,6 +8,10 @@ export interface Product {
     description: string;
     image: string;
     features?: string[];
+    material?: string;
+    quality?: string;
+    sizes?: string[];
+    specifications?: string[];
 }
 
 export interface ProductCategory {
@@ -176,4 +180,73 @@ export const getAllCategorySlugs = (): string[] => {
 
 export const getAllProducts = (): Product[] => {
     return productCategories.flatMap(c => c.products);
+};
+
+// Default product details based on category
+export const getProductDetails = (product: Product) => {
+    const categoryDefaults: Record<string, { material: string; quality: string; sizes: string[]; specifications: string[] }> = {
+        'supermarket-racks': {
+            material: 'High-Grade Mild Steel (MS) with Powder Coating',
+            quality: 'Premium Industrial Grade - ISO 9001:2015 Certified',
+            sizes: ['3ft x 1.5ft x 5ft', '4ft x 1.5ft x 6ft', '5ft x 2ft x 7ft', 'Custom sizes available'],
+            specifications: ['Load capacity: 100-150 kg per shelf', 'Adjustable shelf heights', 'Rust-resistant powder coating', 'Easy assembly design', '5-year warranty'],
+        },
+        'hyper-store-racks': {
+            material: 'Heavy-Duty Mild Steel with Epoxy Powder Coating',
+            quality: 'Industrial Heavy-Duty Grade - Built for High Traffic',
+            sizes: ['4ft x 2ft x 6ft', '5ft x 2ft x 7ft', '6ft x 2.5ft x 8ft', 'Custom sizes available'],
+            specifications: ['Load capacity: 150-200 kg per shelf', 'Double-sided display option', 'Anti-corrosion treatment', 'Modular design', '5-year warranty'],
+        },
+        'fruit-vegetable-racks': {
+            material: 'Food-Grade Stainless Steel / MS with Food-Safe Coating',
+            quality: 'Food-Safe Grade - Hygienic & Easy to Clean',
+            sizes: ['3ft x 2ft x 4ft', '4ft x 2.5ft x 5ft', '5ft x 3ft x 5ft', 'Custom sizes available'],
+            specifications: ['Ventilated design for freshness', 'Tilted display shelves', 'Easy drainage system', 'Mirror/SS tray options', '3-year warranty'],
+        },
+        'electronic-racks': {
+            material: 'Premium Mild Steel with Glass/Acrylic Panels',
+            quality: 'Showroom Grade - Elegant & Sturdy',
+            sizes: ['3ft x 1.5ft x 5ft', '4ft x 2ft x 6ft', '5ft x 2ft x 7ft', 'Custom sizes available'],
+            specifications: ['Tempered glass shelves option', 'Cable management system', 'LED lighting compatible', 'Anti-static coating', '3-year warranty'],
+        },
+        'pharmacy-racks': {
+            material: 'Mild Steel with Anti-Bacterial Powder Coating',
+            quality: 'Medical-Grade Finish - Clean & Professional',
+            sizes: ['2ft x 1ft x 5ft', '3ft x 1.5ft x 6ft', '4ft x 1.5ft x 6ft', 'Custom sizes available'],
+            specifications: ['Label strip holders', 'Adjustable compartments', 'Easy-clean surface', 'Compact design', '3-year warranty'],
+        },
+        'fancy-store-racks': {
+            material: 'Metal Frame with Wooden/Glass Accents',
+            quality: 'Retail Display Grade - Attractive & Modern',
+            sizes: ['2ft x 1.5ft x 5ft', '3ft x 2ft x 6ft', '4ft x 2ft x 6ft', 'Custom sizes available'],
+            specifications: ['Multiple display options', 'Contemporary design', 'Hook attachments available', 'Mix & match configurations', '3-year warranty'],
+        },
+        'garments-racks': {
+            material: 'Chrome-Plated Steel / Wooden Finish Options',
+            quality: 'Boutique Grade - Stylish & Durable',
+            sizes: ['3ft x 1.5ft x 5ft', '4ft x 2ft x 6ft', '5ft x 2ft x 7ft', 'Custom sizes available'],
+            specifications: ['Multiple hanging levels', 'Hanger bar included', 'Shelf + hanging combo options', 'Easy to relocate', '3-year warranty'],
+        },
+        'heavy-duty-racks': {
+            material: 'Heavy Gauge Mild Steel with Industrial Coating',
+            quality: 'Warehouse Industrial Grade - Maximum Strength',
+            sizes: ['4ft x 2ft x 8ft', '5ft x 2.5ft x 10ft', '6ft x 3ft x 12ft', 'Custom sizes available'],
+            specifications: ['Load capacity: 500-1000 kg per level', 'Pallet racking compatible', 'Forklift accessible', 'Seismic rated design', '10-year warranty'],
+        },
+        'accessories': {
+            material: 'Mild Steel / Plastic / Chrome-Plated Steel',
+            quality: 'Commercial Grade - Practical & Reliable',
+            sizes: ['Various standard sizes', 'Custom options available'],
+            specifications: ['Complementary to rack systems', 'High durability', 'Easy maintenance', 'Multiple color options', '2-year warranty'],
+        },
+    };
+
+    const defaults = categoryDefaults[product.categorySlug] || categoryDefaults['supermarket-racks'];
+
+    return {
+        material: product.material || defaults.material,
+        quality: product.quality || defaults.quality,
+        sizes: product.sizes || defaults.sizes,
+        specifications: product.specifications || defaults.specifications,
+    };
 };

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { productCategories, getCategoryBySlug, getAllCategorySlugs, availableColors } from '@/lib/products';
 import { siteConfig, generateCategoryMeta } from '@/lib/seo';
-import { ProductCard } from '@/components/products';
+import { ProductGridWithModal } from '@/components/products';
 
 interface PageProps {
     params: Promise<{ category: string }>;
@@ -98,11 +98,7 @@ export default async function CategoryPage({ params }: PageProps) {
             {/* Products Grid */}
             <section className="py-16 bg-slate-50">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {categoryData.products.map((product, index) => (
-                            <ProductCard key={product.id} product={product} index={index} />
-                        ))}
-                    </div>
+                    <ProductGridWithModal products={categoryData.products} />
                 </div>
             </section>
 
