@@ -71,7 +71,7 @@ export const productCategories: ProductCategory[] = [
         products: [
             { id: 'hs-1', name: 'Single Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Single-sided storage solution', image: '/images/gallery/hyper-store-racks/IMG-20221020-WA0008.jpg' },
             { id: 'hs-2', name: 'Wall Hyper Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Wall-mounted hyper storage', image: '/images/gallery/hyper-store-racks/Wall Hyper Storage Rack.jpg' },
-            { id: 'hs-3', name: 'Display Glass Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Premium glass display rack', image: '/images/gallery/hyper-store-racks/IMG_20161217_134431.jpg' },
+            { id: 'hs-3', name: 'Display Glass Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Premium glass display rack', image: '/images/gallery/hyper-store-racks/IMG-20170419-WA0038.jpg' },
             { id: 'hs-4', name: 'Center Hyper Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Double-sided center rack', image: '/images/gallery/hyper-store-racks/Center Hyper Storage Rack.jpg' },
             { id: 'hs-5', name: 'Multi Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Multi-tier storage system', image: '/images/gallery/hyper-store-racks/IMG20220715134153.jpg' },
             { id: 'hs-6', name: 'Display Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Combined display and storage', image: '/images/gallery/hyper-store-racks/IMG-20221020-WA0030.jpg' },
@@ -94,10 +94,10 @@ export const productCategories: ProductCategory[] = [
         image: '/images/electronic-rack.png',
         products: [
             { id: 'er-1', name: 'Electronic Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Standard electronic display rack', image: '/images/gallery/electronic-racks/IMG20220616195407.jpg' },
-            { id: 'er-2', name: 'Glass Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Tempered glass display rack', image: '/images/gallery/electronic-racks/IMG20220622131431.jpg' },
-            { id: 'er-3', name: 'TV & AC & Water Heater Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Heavy-duty appliance display', image: '/images/gallery/electronic-racks/IMG20220719090212.jpg' },
-            { id: 'er-4', name: 'Bar Hanging Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Hanging display system', image: '/images/gallery/electronic-racks/IMG20210410174519.jpg' },
-            { id: 'er-5', name: 'Brand Display Board Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Brand promotion display', image: '/images/gallery/electronic-racks/IMG20211228120138.jpg' },
+            { id: 'er-2', name: 'Glass Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Tempered glass display rack', image: '/images/gallery/electronic-racks/IMG20220414185623.jpg' },
+            { id: 'er-3', name: 'TV & AC & Water Heater Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Heavy-duty appliance display', image: '/images/gallery/electronic-racks/IMG-20190103-WA0008.jpg' },
+            { id: 'er-4', name: 'Bar Hanging Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Hanging display system', image: '/images/gallery/electronic-racks/IMG20220622131431.jpg' },
+            { id: 'er-5', name: 'Brand Display Board Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Brand promotion display', image: '/images/gallery/electronic-racks/IMG20220616195422.jpg' },
         ]
     },
     {
@@ -106,9 +106,9 @@ export const productCategories: ProductCategory[] = [
         description: 'Clean, organized display solutions for pharmacies and medical stores.',
         image: '/images/pharmacy-rack.png',
         products: [
-            { id: 'ph-1', name: 'Pharmacy Rack', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Standard pharmacy display rack', image: '/images/gallery/pharmacy-racks/IMG-20190214-WA0015.jpg' },
-            { id: 'ph-2', name: 'Clock House', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Specialty display unit', image: '/images/gallery/pharmacy-racks/IMG20221206140151.jpg' },
-            { id: 'ph-3', name: 'Photo Frame Rack', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Photo frame display system', image: '/images/gallery/pharmacy-racks/IMG20230528111627.jpg' },
+            { id: 'ph-1', name: 'Pharmacy Rack', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Standard pharmacy display rack', image: '/images/gallery/pharmacy-racks/IMG20211227122320.jpg' },
+            { id: 'ph-2', name: 'Clock House', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Specialty display unit', image: '/images/gallery/pharmacy-racks/IMG20220121101906.jpg' },
+            { id: 'ph-3', name: 'Photo Frame Rack', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Photo frame display system', image: '/images/gallery/pharmacy-racks/IMG20220121101917.jpg' },
         ]
     },
     {
@@ -120,8 +120,8 @@ export const productCategories: ProductCategory[] = [
             { id: 'fs-1', name: 'Fancy Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Multi-display fancy store rack', image: '/images/gallery/fancy-store-racks/IMG-20240406-WA0003.jpg' },
             { id: 'fs-2', name: 'Stationery Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Stationery display system', image: '/images/gallery/fancy-store-racks/IMG20220623111501.jpg' },
             { id: 'fs-3', name: 'Display Counter', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Front display counter', image: '/images/gallery/fancy-store-racks/IMG20230528111134.jpg' },
-            { id: 'fs-4', name: 'Bag Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Bag display rack', image: '/images/gallery/fancy-store-racks/3251b10ac04246d2a5f221a35fb8f7e9.jpg' },
-            { id: 'fs-5', name: 'Chapplas Hanging Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Footwear hanging display', image: '/images/gallery/fancy-store-racks/IMG-20240406-WA0010.jpg' },
+            { id: 'fs-4', name: 'Bag Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Bag display rack', image: '/images/gallery/pharmacy-racks/IMG20230528111627.jpg' },
+            { id: 'fs-5', name: 'Chapplas Hanging Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Footwear hanging display', image: '/images/gallery/pharmacy-racks/IMG20221206140151.jpg' },
         ]
     },
     {
@@ -135,7 +135,7 @@ export const productCategories: ProductCategory[] = [
             { id: 'gr-3', name: 'Ladder Type Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Ladder-style display rack', image: '/images/gallery/garments-racks/IMG20211126130614.jpg' },
             { id: 'gr-4', name: 'Wooden Shelf Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Premium wooden display', image: '/images/gallery/garments-racks/IMG20221218134139.jpg' },
             { id: 'gr-5', name: 'Hanger Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Clothing hanger system', image: '/images/gallery/garments-racks/IMG20221218134158.jpg' },
-            { id: 'gr-6', name: 'Glass Shelf Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Elegant glass shelf display', image: '/images/gallery/garments-racks/IMG-20220729-WA0010.jpg' },
+            { id: 'gr-6', name: 'Glass Shelf Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Elegant glass shelf display', image: '/images/gallery/garments-racks/IMG20210910165209.jpg' },
             { id: 'gr-7', name: 'Four Way Hanger', category: 'Garments Racks', categorySlug: 'garments-racks', description: '4-way clothing hanger stand', image: '/images/gallery/garments-racks/IMG20221218134134.jpg' },
         ]
     },
