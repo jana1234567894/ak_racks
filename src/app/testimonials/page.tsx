@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { TestimonialCard } from '@/components/testimonials';
+import { TestimonialCard, GoogleReviewsSection } from '@/components/testimonials';
 import { testimonials } from '@/lib/testimonials';
 import { siteConfig } from '@/lib/seo';
 
@@ -32,6 +32,16 @@ export default function TestimonialsPage() {
             {/* Testimonials Grid */}
             <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
                 <div className="container mx-auto px-4">
+                    {/* Google Reviews */}
+                    <GoogleReviewsSection />
+
+                    {/* Divider */}
+                    <div className="flex items-center gap-4 max-w-md mx-auto mb-16">
+                        <div className="flex-1 h-px bg-slate-200"></div>
+                        <span className="text-slate-400 text-sm font-medium px-4">Direct Client Testimonials</span>
+                        <div className="flex-1 h-px bg-slate-200"></div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {testimonials.map((testimonial, index) => (
                             <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
