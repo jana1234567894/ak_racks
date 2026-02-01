@@ -4,10 +4,10 @@ export const siteConfig = {
     name: 'AK Racks',
     tagline: 'Next Step Display Solutions',
     description: 'Leading rack manufacturing and display solution company in Tamil Nadu. We offer supermarket racks, hyper store racks, fruit & vegetable racks, electronic racks, pharmacy racks, garments racks, and heavy-duty racks with complete design, manufacturing, supply, and installation services.',
-    url: 'https://www.akracks.com',
-    phone: '+91 99946 12609',
-    phoneClean: '919994612609',
-    email: 'sales@akracks.com',
+    url: 'https://www.racksmadurai.com',
+    phone: '+91 96778 66522',
+    phoneClean: '919677866522',
+    email: 'krishnan.rack@gmail.com',
     address: {
         street: 'No.2, SR Complex, Salai Road',
         area: 'Thillainagar',
@@ -19,7 +19,7 @@ export const siteConfig = {
     },
     services: ['Consulting', 'Designing', 'Manufacturing', 'Supply', 'Installation with Service'],
     social: {
-        whatsapp: 'https://wa.me/919994612609',
+        whatsapp: 'https://wa.me/919677866522',
     },
     stats: {
         yearsExperience: 10,
