@@ -9,13 +9,13 @@ export const siteConfig = {
     phoneClean: '919677866522',
     email: 'krishnan.rack@gmail.com',
     address: {
-        street: 'No.2, SR Complex, Salai Road',
-        area: 'Thillainagar',
-        city: 'Trichy',
+        street: 'Digital Showroom',
+        area: 'Madurai',
+        city: 'Madurai',
         state: 'Tamil Nadu',
-        pincode: '620 018',
+        pincode: '625 001',
         country: 'India',
-        full: 'No.2, SR Complex, Salai Road, Thillainagar, Trichy – 620 018, Tamil Nadu, India'
+        full: 'Digital Showroom, Madurai, Tamil Nadu'
     },
     services: ['Consulting', 'Designing', 'Manufacturing', 'Supply', 'Installation with Service'],
     social: {
@@ -53,7 +53,7 @@ export const generateCategoryMeta = (categoryName: string, categoryDescription: 
         categoryName.toLowerCase(),
         `${categoryName.toLowerCase()} manufacturers`,
         `${categoryName.toLowerCase()} Tamil Nadu`,
-        `${categoryName.toLowerCase()} Trichy`,
+        `${categoryName.toLowerCase()} Madurai`,
         'display racks',
         'retail solutions',
         'AK Racks',
@@ -100,8 +100,8 @@ export const structuredData = {
         },
         geo: {
             '@type': 'GeoCoordinates',
-            latitude: '10.8059',
-            longitude: '78.6897',
+            latitude: '9.9252',
+            longitude: '78.1198',
         },
         areaServed: {
             '@type': 'State',
