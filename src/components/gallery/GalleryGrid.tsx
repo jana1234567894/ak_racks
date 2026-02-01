@@ -66,6 +66,8 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                                     width={600}
                                     height={400}
                                     className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                    loading="lazy"
                                 />
 
                                 {/* Overlay */}
