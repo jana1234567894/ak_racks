@@ -1,13 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
 interface GalleryImage {
     src: string;
     alt: string;
-    category?: string;
+    category: string;
 }
 
 interface GalleryGridProps {
@@ -16,104 +16,166 @@ interface GalleryGridProps {
 
 export function GalleryGrid({ images }: GalleryGridProps) {
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+    const [activeCategory, setActiveCategory] = useState('All');
+
+    const categories = ['All', ...Array.from(new Set(images.map(img => img.category)))];
+
+    const filteredImages = activeCategory === 'All'
+        ? images
+        : images.filter(img => img.category === activeCategory);
 
     return (
         <>
-            {/* Masonry Grid */}
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                {images.map((image, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.05 }}
-                        className="break-inside-avoid group cursor-pointer"
-                        onClick={() => setSelectedImage(image)}
+            {/* Category Filter */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+                {categories.map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => setActiveCategory(category)}
+                        className={`px-6 py-2 rounded-full font-medium transition-all ${activeCategory === category
+                                ? 'bg-orange-600 text-white shadow-lg shadow-orange-500/25'
+                                : 'bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-600 border border-slate-200'
+                            }`}
                     >
-                        <div className="relative overflow-hidden rounded-2xl bg-slate-100">
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                width={600}
-                                height={400}
-                                className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
-                            />
-
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="absolute bottom-0 left-0 right-0 p-6">
-                                    <p className="text-white font-medium">{image.alt}</p>
-                                    {image.category && (
-                                        <span className="text-orange-400 text-sm">{image.category}</span>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Zoom Icon */}
-                            <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </motion.div>
+                        {category}
+                    </button>
                 ))}
             </div>
 
-            {/* Lightbox */}
-            {selectedImage && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    <button
-                        onClick={() => setSelectedImage(null)}
-                        className="absolute top-6 right-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+            {/* Masonry Grid */}
+            <motion.div
+                layout
+                className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
+            >
+                <AnimatePresence>
+                    {filteredImages.map((image, index) => (
+                        <motion.div
+                            layout
+                            key={image.src}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={{ duration: 0.3 }}
+                            className="break-inside-avoid group cursor-pointer"
+                            onClick={() => setSelectedImage(image)}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl bg-slate-100 shadow-md">
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
+                                />
 
+                                {/* Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <p className="text-white font-medium">{image.alt}</p>
+                                        <span className="text-orange-400 text-sm">{image.category}</span>
+                                    </div>
+                                </div>
+
+                                {/* Zoom Icon */}
+                                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                                    <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </motion.div>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
                     <motion.div
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.9, opacity: 0 }}
-                        className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl"
-                        onClick={(e) => e.stopPropagation()}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
+                        onClick={() => setSelectedImage(null)}
                     >
-                        <Image
-                            src={selectedImage.src}
-                            alt={selectedImage.alt}
-                            width={1200}
-                            height={800}
-                            className="w-full h-auto max-h-[85vh] object-contain"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                            <p className="text-white text-lg font-medium">{selectedImage.alt}</p>
-                            {selectedImage.category && (
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-6 right-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-50"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Image
+                                src={selectedImage.src}
+                                alt={selectedImage.alt}
+                                width={1200}
+                                height={800}
+                                className="w-full h-auto max-h-[85vh] object-contain"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                <p className="text-white text-lg font-medium">{selectedImage.alt}</p>
                                 <span className="text-orange-400">{selectedImage.category}</span>
-                            )}
-                        </div>
+                            </div>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
-            )}
+                )}
+            </AnimatePresence>
         </>
     );
 }
 
-// Sample gallery images for the gallery page
+// Gallery Images Data
 export const galleryImages: GalleryImage[] = [
-    { src: '/images/gallery-1.png', alt: 'Supermarket Installation', category: 'Supermarket Racks' },
-    { src: '/images/gallery-2.png', alt: 'Warehouse Setup', category: 'Heavy Duty Racks' },
-    { src: '/images/factory.png', alt: 'Manufacturing Unit', category: 'Factory' },
-    { src: '/images/installation.png', alt: 'Installation Process', category: 'Installation' },
-    { src: '/images/department-racks.png', alt: 'Department Store Display', category: 'Department Racks' },
-    { src: '/images/vegetable-racks.png', alt: 'Fruit & Vegetable Display', category: 'Vegetable Racks' },
-    { src: '/images/warehouse-racks.png', alt: 'Industrial Storage', category: 'Warehouse Racks' },
-    { src: '/images/custom-racks.png', alt: 'Custom Rack Solutions', category: 'Custom Racks' },
+    // Supermarket Racks
+    { src: '/images/gallery/supermarket-racks/10Center Rack.JPG', alt: 'Center Aisle Rack', category: 'Supermarket Racks' },
+    { src: '/images/gallery/supermarket-racks/12Corner Rack.JPG', alt: 'Corner Display Rack', category: 'Supermarket Racks' },
+    { src: '/images/gallery/supermarket-racks/14Masala Rack.JPG', alt: 'Masala Display Rack', category: 'Supermarket Racks' },
+    { src: '/images/gallery/supermarket-racks/15Oil Rack.JPG', alt: 'Heavy Duty Oil Rack', category: 'Supermarket Racks' },
+    { src: '/images/gallery/supermarket-racks/17Snacks Rack.JPG', alt: 'Snacks Display Unit', category: 'Supermarket Racks' },
+    { src: '/images/gallery/supermarket-racks/8Wall Channel Rack.JPG', alt: 'Wall Channel Rack', category: 'Supermarket Racks' },
+
+    // Hyper Store Racks
+    { src: '/images/gallery/hyper-store-racks/Center Hyper Storage Rack.jpg', alt: 'Hyper Store Center Rack', category: 'Hyper Store Racks' },
+    { src: '/images/gallery/hyper-store-racks/Wall Hyper Storage Rack.jpg', alt: 'Hyper Wall Storage', category: 'Hyper Store Racks' },
+    { src: '/images/gallery/hyper-store-racks/IMG20220715134153.jpg', alt: 'Multi-Tier Storage System', category: 'Hyper Store Racks' },
+
+    // Fruit & Vegetable Racks
+    { src: '/images/gallery/fruit-vegetable-racks/IMG-20161230-WA0043.jpg', alt: 'Fresh Produce Rack', category: 'Fruit & Vegetable Racks' },
+    { src: '/images/gallery/fruit-vegetable-racks/IMG-20231227-WA0009.jpg', alt: 'SS Vegetable Rack', category: 'Fruit & Vegetable Racks' },
+    { src: '/images/gallery/fruit-vegetable-racks/IMG-20240503-WA0024.jpg', alt: 'Wall Vegetable Display', category: 'Fruit & Vegetable Racks' },
+
+    // Electronic Racks
+    { src: '/images/gallery/electronic-racks/IMG20220616195407.jpg', alt: 'Electronics Display', category: 'Electronic Racks' },
+    { src: '/images/gallery/electronic-racks/IMG20220622131431.jpg', alt: 'Glass Display Unit', category: 'Electronic Racks' },
+    { src: '/images/gallery/electronic-racks/IMG20220719090212.jpg', alt: 'Appliance Rack', category: 'Electronic Racks' },
+
+    // Pharmacy Racks
+    { src: '/images/gallery/pharmacy-racks/IMG-20190214-WA0015.jpg', alt: 'Medical Store Rack', category: 'Pharmacy Racks' },
+    { src: '/images/gallery/pharmacy-racks/IMG20221206140151.jpg', alt: 'Pharmacy Display Unit', category: 'Pharmacy Racks' },
+    { src: '/images/gallery/pharmacy-racks/IMG20230528111627.jpg', alt: 'Glass Pharmacy Rack', category: 'Pharmacy Racks' },
+
+    // Fancy Store Racks
+    { src: '/images/gallery/fancy-store-racks/IMG-20240406-WA0003.jpg', alt: 'Fancy Store Display', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/fancy-store-racks/IMG20220623111501.jpg', alt: 'Stationery Rack', category: 'Fancy Store Racks' },
+    { src: '/images/gallery/fancy-store-racks/IMG20230528111134.jpg', alt: 'Shop Counter Display', category: 'Fancy Store Racks' },
+
+    // Garments Racks
+    { src: '/images/gallery/garments-racks/IMG20210910165001.jpg', alt: 'Garment Display', category: 'Garments Racks' },
+    { src: '/images/gallery/garments-racks/IMG-20210407-WA0003.jpg', alt: 'Step Down Rack', category: 'Garments Racks' },
+    { src: '/images/gallery/garments-racks/IMG20211126130614.jpg', alt: 'Ladder Display Rack', category: 'Garments Racks' },
+    { src: '/images/gallery/garments-racks/IMG20221218134139.jpg', alt: 'Wooden Boutique Rack', category: 'Garments Racks' },
+
+    // Heavy Duty Racks
+    { src: '/images/gallery/heavy-duty-racks/IMG-20211221-WA0011.jpg', alt: 'Heavy Duty Storage', category: 'Heavy Duty Racks' },
+    { src: '/images/gallery/heavy-duty-racks/IMG-20211230-WA0005.jpg', alt: 'Industrial Warehouse Rack', category: 'Heavy Duty Racks' },
+    { src: '/images/gallery/heavy-duty-racks/IMG-20240220-WA0007.jpg', alt: 'Pallet Racking System', category: 'Heavy Duty Racks' },
 ];
