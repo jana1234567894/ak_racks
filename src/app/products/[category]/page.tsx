@@ -78,8 +78,15 @@ export default async function CategoryPage({ params }: PageProps) {
                             <span className="text-slate-400 text-sm">Available Colors:</span>
                             <div className="flex flex-wrap gap-2">
                                 {availableColors.map((color) => (
-                                    <span key={color} className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">
-                                        {color}
+                                    <span
+                                        key={color.name}
+                                        className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700"
+                                    >
+                                        <span
+                                            className="w-4 h-4 rounded-full border border-slate-600 shadow-inner"
+                                            style={{ backgroundColor: color.hex }}
+                                        />
+                                        {color.name}
                                     </span>
                                 ))}
                             </div>

@@ -32,11 +32,18 @@ export default function ProductsPage() {
                             <span className="text-slate-400 text-sm">Available Colors:</span>
                             <div className="flex flex-wrap gap-2">
                                 {availableColors.slice(0, 8).map((color) => (
-                                    <span key={color} className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">
-                                        {color}
+                                    <span
+                                        key={color.name}
+                                        className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700"
+                                    >
+                                        <span
+                                            className="w-4 h-4 rounded-full border border-slate-600 shadow-inner"
+                                            style={{ backgroundColor: color.hex }}
+                                        />
+                                        {color.name}
                                     </span>
                                 ))}
-                                <span className="px-3 py-1 bg-orange-500/20 rounded-full text-xs text-orange-400 border border-orange-500/30">
+                                <span className="flex items-center gap-2 px-3 py-1.5 bg-orange-500/20 rounded-full text-xs text-orange-400 border border-orange-500/30">
                                     +{availableColors.length - 8} more
                                 </span>
                             </div>

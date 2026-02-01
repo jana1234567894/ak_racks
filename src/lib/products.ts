@@ -18,9 +18,24 @@ export interface ProductCategory {
     products: Product[];
 }
 
-export const availableColors = [
-    'Red', 'Blue', 'Yellow', 'Pink', 'Grey', 'Sky Blue',
-    'Brown', 'Orange', 'Light Green', 'Green', 'White', 'Cream'
+export interface ColorOption {
+    name: string;
+    hex: string;
+}
+
+export const availableColors: ColorOption[] = [
+    { name: 'Red', hex: '#DC2626' },
+    { name: 'Blue', hex: '#2563EB' },
+    { name: 'Yellow', hex: '#EAB308' },
+    { name: 'Pink', hex: '#EC4899' },
+    { name: 'Grey', hex: '#6B7280' },
+    { name: 'Sky Blue', hex: '#0EA5E9' },
+    { name: 'Brown', hex: '#92400E' },
+    { name: 'Orange', hex: '#F97316' },
+    { name: 'Light Green', hex: '#84CC16' },
+    { name: 'Green', hex: '#16A34A' },
+    { name: 'White', hex: '#FFFFFF' },
+    { name: 'Cream', hex: '#FEF3C7' },
 ];
 
 export const productCategories: ProductCategory[] = [
