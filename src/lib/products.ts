@@ -69,9 +69,9 @@ export const productCategories: ProductCategory[] = [
         description: 'Large-format display and storage solutions for hyper stores and large retail spaces.',
         image: '/images/hyper-store-rack.png',
         products: [
-            { id: 'hs-1', name: 'Single Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Single-sided storage solution', image: '/images/gallery/hyper-store-racks/Wall Hyper Storage Rack.jpg' },
+            { id: 'hs-1', name: 'Single Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Single-sided storage solution', image: '/images/gallery/hyper-store-racks/IMG-20221020-WA0008.jpg' },
             { id: 'hs-2', name: 'Wall Hyper Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Wall-mounted hyper storage', image: '/images/gallery/hyper-store-racks/Wall Hyper Storage Rack.jpg' },
-            { id: 'hs-3', name: 'Display Glass Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Premium glass display rack', image: '/images/gallery/hyper-store-racks/Center Hyper Storage Rack.jpg' },
+            { id: 'hs-3', name: 'Display Glass Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Premium glass display rack', image: '/images/gallery/hyper-store-racks/IMG_20161217_134431.jpg' },
             { id: 'hs-4', name: 'Center Hyper Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Double-sided center rack', image: '/images/gallery/hyper-store-racks/Center Hyper Storage Rack.jpg' },
             { id: 'hs-5', name: 'Multi Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Multi-tier storage system', image: '/images/gallery/hyper-store-racks/IMG20220715134153.jpg' },
             { id: 'hs-6', name: 'Display Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Combined display and storage', image: '/images/gallery/hyper-store-racks/IMG-20221020-WA0030.jpg' },
