@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories - AK Racks | Browse by Industry</title>
+    <meta name="description"
+        content="Explore AK Racks product categories - Supermarket, Hyper Store, Electronics, Pharmacy, Garments, Fruits & Vegetables, and Warehouse solutions.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/product-modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-orange: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --gradient-blue: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-green: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --gradient-red: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            --gradient-pink: linear-gradient(135deg, #f857a6 0%, #ff5858 100%);
+            --gradient-teal: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+        }
+
+        body {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        /* Hero Section */
+        .categories-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #8b5cf6 100%);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .categories-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .categories-hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .categories-hero p {
+            font-size: 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            font-weight: 300;
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 5rem 0;
+            padding: 0 2rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .category-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-header {
+            height: 280px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.9;
+            transition: all 0.5s ease;
+        }
+
+        .category-card:hover .category-image {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            font-weight: 900;
+        }
+
+        .category-content {
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .category-description {
+            font-size: 1.125rem;
+            color: var(--steel-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .category-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--steel-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+        }
+
+        .category-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .category-cta {
+            transform: translateX(8px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+
+        /* Custom gradient backgrounds */
+        .cat-supermarket .category-header {
+            background: var(--gradient-orange);
+        }
+
+        .cat-hyper .category-header {
+            background: var(--gradient-purple);
+        }
+
+        .cat-electronics .category-header {
+            background: var(--gradient-blue);
+        }
+
+        .cat-pharmacy .category-header {
+            background: var(--gradient-green);
+        }
+
+        .cat-garments .category-header {
+            background: var(--gradient-pink);
+        }
+
+        .cat-fruits .category-header {
+            background: var(--gradient-teal);
+        }
+
+        .cat-warehouse .category-header {
+            background: var(--gradient-red);
+        }
+
+        @media (max-width: 768px) {
+            .categories-hero h1 {
+                font-size: 3rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AK <span>Racks</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="categories.html" class="nav-link active">Categories</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="categories-hero">
+        <h1>Explore Our Products</h1>
+        <p>Premium rack solutions organized by industry - Find the perfect fit for your business</p>
+    </section>
+
+    <!-- Categories Grid -->
+    <div class="container">
+        <div class="categories-grid">
+
+            <!-- Supermarket Racks -->
+            <a href="products.html?category=supermarket" class="category-card cat-supermarket">
+                <div class="category-header">
+                    <img src="assets/images/supermarket-racks.png" alt="Supermarket Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Supermarket Racks</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Supermarket Racks</h2>
+                    <p class="category-description">Complete display solutions for grocery stores and supermarkets</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">9</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">150kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Hyper Store Racks -->
+            <a href="products.html?category=hyper-store" class="category-card cat-hyper">
+                <div class="category-header">
+                    <img src="assets/images/department-racks.png" alt="Hyper Store Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Hyper Store</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Hyper Store Racks</h2>
+                    <p class="category-description">Large-scale retail systems for hypermarkets and big-box stores</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">250kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Electronics Racks -->
+            <a href="products.html?category=electronics" class="category-card cat-electronics">
+                <div class="category-header">
+                    <img src="assets/images/gallery-2.png" alt="Electronics Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Electronics</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Electronics & Metal Mart</h2>
+                    <p class="category-description">Specialized displays for electronics stores and metal marts</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">180kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Pharmacy Racks -->
+            <a href="products.html?category=pharmacy" class="category-card cat-pharmacy">
+                <div class="category-header">
+                    <img src="assets/images/custom-racks.png" alt="Pharmacy Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Pharmacy</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Pharmacy & Stationery</h2>
+                    <p class="category-description">Organized storage for pharmacies and stationery shops</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">100kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Garments Racks -->
+            <a href="products.html?category=garments" class="category-card cat-garments">
+                <div class="category-header">
+                    <img src="assets/images/gallery-3.png" alt="Garments Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Garments</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Garments & Textiles</h2>
+                    <p class="category-description">Hanging and display solutions for clothing and textile stores</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">100kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Fruits & Vegetables -->
+            <a href="products.html?category=fruits" class="category-card cat-fruits">
+                <div class="category-header">
+                    <img src="assets/images/vegetable-racks.png" alt="Fruits & Vegetables Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Fresh Produce</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Fruits & Vegetables</h2>
+                    <p class="category-description">Tiered display solutions for fresh produce sections</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">80kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Warehouse Racks -->
+            <a href="products.html?category=warehouse" class="category-card cat-warehouse">
+                <div class="category-header">
+                    <img src="assets/images/warehouse-racks.png" alt="Warehouse Racks" class="category-image">
+                    <div class="category-overlay"></div>
+                    <div class="category-icon">Warehouse</div>
+                </div>
+                <div class="category-content">
+                    <h2 class="category-title">Warehouse & Heavy Duty</h2>
+                    <p class="category-description">Industrial storage solutions for warehouses and large facilities</p>
+                    <div class="category-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">3000kg</span>
+                            <span class="stat-label">Max Load</span>
+                        </div>
+                    </div>
+                    <div class="category-cta">
+                        View Products
+                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>AK Racks</h3>
+                    <p>Premium display solutions for retail, supermarkets, and industrial applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Trichy, Tamil Nadu</p>
+                    <p>Phone: +91 98940 60467</p>
+                    <p>Email: info@akracks.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AK Racks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

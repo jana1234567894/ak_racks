@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog - AK Racks | Premium Display Solutions for Every Industry</title>
+    <meta name="description"
+        content="Explore AK Racks complete product catalog - Supermarket racks, Hyper store fixtures, Fruit displays, Electronic racks, Pharmacy solutions & more. Custom colors & materials available.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gradient-modern: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-orange: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --gradient-blue: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --shadow-modern: 0 20px 60px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        /* Modern Hero */
+        .modern-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modern-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .modern-hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .modern-hero p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Category Filter Pills */
+        .category-filter {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-modern);
+            margin: -3rem auto 3rem;
+            max-width: 1200px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-pill {
+            padding: 0.875rem 1.75rem;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px solid transparent;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-pill.active {
+            background: var(--gradient-orange);
+            color: white;
+            border-color: #ff6b35;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .filter-pill .pill-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Modern Product Grid */
+        .products-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .product-card-modern {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .product-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image-modern {
+            position: relative;
+            height: 320px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .product-image-modern img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card-modern:hover .product-image-modern img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-content-modern {
+            padding: 2rem;
+        }
+
+        .product-category {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title-modern {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .product-specs-modern {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .spec-item-modern {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spec-label-modern {
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-value-modern {
+            font-size: 0.9375rem;
+            color: var(--charcoal);
+            font-weight: 700;
+        }
+
+        /* Color Palette Selector */
+        .color-palette {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+
+        .color-palette-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-right: 0.5rem;
+        }
+
+        .color-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.15);
+            border-color: var(--accent-orange);
+        }
+
+        .color-dot.selected {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
+        }
+
+        /* Material Chips */
+        .material-chips {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .material-chip {
+            padding: 0.375rem 0.875rem;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px solid #d1d5db;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .material-chip:hover,
+        .material-chip.selected {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        /* CTA Buttons */
+        .product-actions-modern {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-modern-primary {
+            background: var(--gradient-orange);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-modern-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-modern-secondary {
+            background: white;
+            color: var(--charcoal);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+        }
+
+        .btn-modern-secondary:hover {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+        }
+
+        /* Section Headers */
+        .section-modern {
+            margin: 5rem 0;
+        }
+
+        .section-header-modern {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header-modern h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-header-modern p {
+            font-size: 1.25rem;
+            color: var(--steel-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .modern-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .products-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .product-specs-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions-modern {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AK <span>Racks</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products-catalog.html" class="nav-link active">Products</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Modern Hero -->
+    <section class="modern-hero">
+        <h1>Premium Rack Solutions</h1>
+        <p>Discover our complete range of customizable display racks designed for every industry</p>
+    </section>
+
+    <!-- Category Filter -->
+    <div class="container">
+        <div class="category-filter">
+            <div class="filter-pills">
+                <button class="filter-pill active" data-category="all">
+                    <span class="pill-icon">🏪</span>
+                    All Products
+                </button>
+                <button class="filter-pill" data-category="supermarket">
+                    <span class="pill-icon">🛒</span>
+                    Supermarket Racks
+                </button>
+                <button class="filter-pill" data-category="hyper-store">
+                    <span class="pill-icon">🏬</span>
+                    Hyper Store
+                </button>
+                <button class="filter-pill" data-category="fruits">
+                    <span class="pill-icon">🍎</span>
+                    Fruits & Vegetables
+                </button>
+                <button class="filter-pill" data-category="electronics">
+                    <span class="pill-icon">📱</span>
+                    Electronics
+                </button>
+                <button class="filter-pill" data-category="pharmacy">
+                    <span class="pill-icon">💊</span>
+                    Pharmacy
+                </button>
+                <button class="filter-pill" data-category="garments">
+                    <span class="pill-icon">👔</span>
+                    Garments
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPERMARKET RACKS SECTION -->
+    <section class="section-modern" id="supermarket">
+        <div class="container">
+            <div class="section-header-modern">
+                <h2>Supermarket Racks</h2>
+                <p>Premium display solutions for supermarkets and grocery stores</p>
+            </div>
+
+            <div class="products-grid-modern">
+
+                <!-- Corner Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Popular</span>
+                        <img src="assets/images/hero.png" alt="Corner Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Corner Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">L-Shaped</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">5 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">150kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #ffffff 50%, #3b82f6 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #2d3436 50%, #ffd700 50%);"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">MS Steel</span>
+                            <span class="material-chip">Heavy Duty</span>
+                            <span class="material-chip">Stainless</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Corner%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wall Channel Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <img src="assets/images/department-racks.png" alt="Wall Channel Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Wall Channel Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 8ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Support</span>
+                                <span class="spec-value-modern">Aluminum</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">6 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Mounting</span>
+                                <span class="spec-value-modern">Wall Fixed</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #ffffff; border: 2px solid #e5e7eb;">
+                            </div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Aluminum Support</span>
+                            <span class="material-chip">MS Steel</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Wall%20Channel%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Rack (Gondola) -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Best Seller</span>
+                        <img src="assets/images/custom-racks.png" alt="Center Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Center Rack (Gondola)</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Double-Sided</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves/Side</span>
+                                <span class="spec-value-modern">4-6 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">200kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #ffffff 50%, #3b82f6 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #2ecc71 50%, #808080 50%);"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty Steel</span>
+                            <span class="material-chip">Perforated Back</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Center%20Rack%20Gondola"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nook Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <img src="assets/images/gallery-1.png" alt="Nook Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Nook Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Single-Sided</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">5-6 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">120kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #ffffff; border: 2px solid #e5e7eb;">
+                            </div>
+                            <div class="color-dot" style="background: #808080;"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">MS Steel</span>
+                            <span class="material-chip">Powder Coated</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Nook%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reverse Corner Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <img src="assets/images/custom-racks.png" alt="Reverse Corner Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Reverse Corner Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Reverse L-Shape</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">5-6 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">150kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #2ecc71 50%, #808080 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #ffffff 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty Steel</span>
+                            <span class="material-chip">MS Angle</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Reverse%20Corner%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wall Rack (Aluminum Support) -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Premium</span>
+                        <img src="assets/images/department-racks.png" alt="Wall Rack Aluminum Support">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Wall Rack (Aluminum Support)</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 8ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Support</span>
+                                <span class="spec-value-modern">Aluminum Multi</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">6-8 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Mounting</span>
+                                <span class="spec-value-modern">Wall Fixed</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #c0c0c0;"></div>
+                            <div class="color-dot" style="background: #ffffff; border: 2px solid #e5e7eb;"></div>
+                            <div class="color-dot" style="background: #808080;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Aluminum Support</span>
+                            <span class="material-chip">MS Shelves</span>
+                            <span class="material-chip">Galvanized</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Wall%20Rack%20Aluminum%20Support"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mazda Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <img src="assets/images/vegetable-racks.png" alt="Mazda Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Mazda Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 6ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Display Shelf</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">4-5 Fixed</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">100kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Medium Duty</span>
+                            <span class="material-chip">Wire Mesh</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Mazda%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oil Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <img src="assets/images/gallery-2.png" alt="Oil Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Oil Rack (Heavy Duty)</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">4ft - 6ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Bottle Display</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">4-5 Fixed</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">200kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #ffd700;"></div>
+                            <div class="color-dot" style="background: #e74c3c;"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty Steel</span>
+                            <span class="material-chip">Reinforced</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Oil%20Rack%20Heavy%20Duty"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snacks Rack -->
+                <div class="product-card-modern" data-category="supermarket">
+                    <div class="product-image-modern">
+                        <img src="assets/images/gallery-3.png" alt="Snacks Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Supermarket</div>
+                        <h3 class="product-title-modern">Snacks Rack (Multi-Tier)</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 6ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Double-Sided</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">6-8 per side</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">80kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #ffffff 50%, #3b82f6 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #e74c3c 50%, #ffd700 50%);"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Medium Duty</span>
+                            <span class="material-chip">Wire Shelves</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Snacks%20Rack%20Multi-Tier"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FRUITS & VEGETABLES SECTION -->
+    <section class="section-modern section-alt" id="fruits">
+        <div class="container">
+            <div class="section-header-modern">
+                <h2>Fruit & Vegetable Racks</h2>
+                <p>Tiered display solutions for fresh produce</p>
+            </div>
+
+            <div class="products-grid-modern">
+
+                <!-- Tiered Vegetable Rack -->
+                <div class="product-card-modern" data-category="fruits">
+                    <div class="product-image-modern">
+                        <img src="assets/images/vegetable-racks.png" alt="Tiered Vegetable Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Fruits & Vegetables</div>
+                        <h3 class="product-title-modern">Tiered Vegetable Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">3ft - 5ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Slanted Tiers</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Tiers</span>
+                                <span class="spec-value-modern">3-4 Levels</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelf Type</span>
+                                <span class="spec-value-modern">Wire Mesh</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #2ecc71;"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #808080 50%, #2ecc71 50%);"></div>
+                            <div class="color-dot" style="background: #e74c3c;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Medium Duty Steel</span>
+                            <span class="material-chip">Stainless Steel</span>
+                            <span class="material-chip">Galvanized</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Tiered%20Vegetable%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HYPER STORE RACKS SECTION -->
+    <section class="section-modern" id="hyper-store">
+        <div class="container">
+            <div class="section-header-modern">
+                <h2>Hyper Store Racks</h2>
+                <p>Large-scale retail display systems for hypermarkets and big-box stores</p>
+            </div>
+
+            <div class="products-grid-modern">
+
+                <!-- Bright Storage Rack -->
+                <div class="product-card-modern" data-category="hyper-store">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Featured</span>
+                        <img src="assets/images/gallery-1.png" alt="Bright Storage Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Hyper Store</div>
+                        <h3 class="product-title-modern">Bright Storage Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">7ft - 10ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">High Capacity</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">6-8 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Load</span>
+                                <span class="spec-value-modern">250kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #ffffff 50%, #3b82f6 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty Steel</span>
+                            <span class="material-chip">Reinforced Frame</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Bright%20Storage%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wall Hyper Storage Rack -->
+                <div class="product-card-modern" data-category="hyper-store">
+                    <div class="product-image-modern">
+                        <img src="assets/images/department-racks.png" alt="Wall Hyper Storage Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Hyper Store</div>
+                        <h3 class="product-title-modern">Wall Hyper Storage Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">8ft - 12ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Wall Mounted</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">8-10 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Depth</span>
+                                <span class="spec-value-modern">12-18 inches</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #ffffff; border: 2px solid #e5e7eb;">
+                            </div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot" style="background: #808080;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">MS Steel</span>
+                            <span class="material-chip">Powder Coated</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Wall%20Hyper%20Storage%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Display Glass Rack -->
+                <div class="product-card-modern" data-category="hyper-store">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Premium</span>
+                        <img src="assets/images/custom-racks.png" alt="Display Glass Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Hyper Store</div>
+                        <h3 class="product-title-modern">Display Glass Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 8ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Material</span>
+                                <span class="spec-value-modern">Glass + Steel</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">5-7 Tempered Glass</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Load</span>
+                                <span class="spec-value-modern">100kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #c0c0c0;"></div>
+                            <div class="color-dot" style="background: #2d3436;"></div>
+                            <div class="color-dot" style="background: #ffd700;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Tempered Glass</span>
+                            <span class="material-chip">Stainless Steel</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Display%20Glass%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WAREHOUSE SECTION -->
+    <section class="section-modern" id="warehouse">
+        <div class="container">
+            <div class="section-header-modern">
+                <h2>Warehouse & Heavy Duty</h2>
+                <p>Industrial storage solutions for warehouses</p>
+            </div>
+
+            <div class="products-grid-modern">
+
+                <!-- Heavy Duty Pallet Rack -->
+                <div class="product-card-modern" data-category="warehouse">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Industrial</span>
+                        <img src="assets/images/warehouse-racks.png" alt="Heavy Duty Pallet Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Warehouse</div>
+                        <h3 class="product-title-modern">Heavy Duty Pallet Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">10ft - 15ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Bay Width</span>
+                                <span class="spec-value-modern">8ft - 10ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Load Capacity</span>
+                                <span class="spec-value-modern">2000-3000kg</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Levels</span>
+                                <span class="spec-value-modern">2-4 Beams</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #3b82f6 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #2ecc71 50%, #808080 50%);"></div>
+                            <div class="color-dot"
+                                style="background: linear-gradient(135deg, #e74c3c 50%, #2d3436 50%);"></div>
+                            <div class="color-dot" style="background: #ffd700;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty (6mm)</span>
+                            <span class="material-chip">Extra Heavy (8mm)</span>
+                            <span class="material-chip">Hot Rolled Steel</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Heavy%20Duty%20Pallet%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ELECTRONICS RACKS SECTION -->
+    <section class="section-modern section-alt" id="electronics">
+        <div class="container">
+            <div class="section-header-modern">
+                <h2>Electronics & Metal Mart Racks</h2>
+                <p>Specialized display solutions for electronics stores and metal marts</p>
+            </div>
+
+            <div class="products-grid-modern">
+
+                <!-- Electronic Racks (TV/AC Display) -->
+                <div class="product-card-modern" data-category="electronics">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Popular</span>
+                        <img src="assets/images/gallery-2.png" alt="Electronic Display Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Electronics</div>
+                        <h3 class="product-title-modern">TV & AC Wall Display Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 10ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Wall Mounted</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Display Units</span>
+                                <span class="spec-value-modern">4-8 Units</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Load</span>
+                                <span class="spec-value-modern">150kg/unit</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #2d3436;"></div>
+                            <div class="color-dot" style="background: #c0c0c0;"></div>
+                            <div class="color-dot" style="background: #ffffff; border: 2px solid #e5e7eb;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty Steel</span>
+                            <span class="material-chip">Wall Brackets</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20TV%20AC%20Wall%20Display%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glass Rack (Electronics Display) -->
+                <div class="product-card-modern" data-category="electronics">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Premium</span>
+                        <img src="assets/images/gallery-3.png" alt="Glass Electronics Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Electronics</div>
+                        <h3 class="product-title-modern">Glass Display Showcase</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Material</span>
+                                <span class="spec-value-modern">Tempered Glass</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">4-6 Glass</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Frame</span>
+                                <span class="spec-value-modern">Aluminum</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #c0c0c0;"></div>
+                            <div class="color-dot" style="background: #2d3436;"></div>
+                            <div class="color-dot" style="background: #ffd700;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Tempered Glass</span>
+                            <span class="material-chip">Aluminum Frame</span>
+                            <span class="material-chip">LED Lighting</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Glass%20Display%20Showcase"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metal Mart Rack -->
+                <div class="product-card-modern" data-category="electronics">
+                    <div class="product-image-modern">
+                        <img src="assets/images/warehouse-racks.png" alt="Metal Mart Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Metal Mart</div>
+                        <h3 class="product-title-modern">Metal Mart Display Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 8ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Multi-Purpose</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">5-7 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">180kg/shelf</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Heavy Duty Steel</span>
+                            <span class="material-chip">Powder Coated</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Metal%20Mart%20Display%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PHARMACY & STATIONERY SECTION -->
+    <section class="section-modern" id="pharmacy">
+        <div class="container">
+            <div class="section-header-modern">
+                <h2>Pharmacy & Stationery Racks</h2>
+                <p>Organized storage solutions for pharmacies, medical stores, and stationery shops</p>
+            </div>
+
+            <div class="products-grid-modern">
+
+                <!-- Pharmacy Rack -->
+                <div class="product-card-modern" data-category="pharmacy">
+                    <div class="product-image-modern">
+                        <span class="product-badge">Best Seller</span>
+                        <img src="assets/images/department-racks.png" alt="Pharmacy Medicine Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Pharmacy</div>
+                        <h3 class="product-title-modern">Pharmacy Medicine Display Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">6ft - 8ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Wall/Counter</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">8-12 Adjustable</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Depth</span>
+                                <span class="spec-value-modern">8-12 inches</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #ffffff; border: 2px solid #e5e7eb;">
+                            </div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot" style="background: #2ecc71;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">MS Steel</span>
+                            <span class="material-chip">Powder Coated</span>
+                            <span class="material-chip">Acrylic Dividers</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Pharmacy%20Medicine%20Display%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stationery Display Rack -->
+                <div class="product-card-modern" data-category="pharmacy">
+                    <div class="product-image-modern">
+                        <img src="assets/images/custom-racks.png" alt="Stationery Display Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Stationery</div>
+                        <h3 class="product-title-modern">Stationery Display Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Multi-Tier</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Shelves</span>
+                                <span class="spec-value-modern">6-8 Fixed</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Compartments</span>
+                                <span class="spec-value-modern">20-30 Slots</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected"
+                                style="background: linear-gradient(135deg, #3b82f6 50%, #ff6b35 50%);"></div>
+                            <div class="color-dot" style="background: #e74c3c;"></div>
+                            <div class="color-dot" style="background: #ffd700;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Medium Duty</span>
+                            <span class="material-chip">Wire Dividers</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Stationery%20Display%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedsheet/Garment Hanging Rack -->
+                <div class="product-card-modern" data-category="garments">
+                    <div class="product-image-modern">
+                        <img src="assets/images/vegetable-racks.png" alt="Garment Hanging Rack">
+                    </div>
+                    <div class="product-content-modern">
+                        <div class="product-category">Garments</div>
+                        <h3 class="product-title-modern">Bedsheet & Garment Hanging Rack</h3>
+
+                        <div class="product-specs-modern">
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Height</span>
+                                <span class="spec-value-modern">5ft - 7ft</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Type</span>
+                                <span class="spec-value-modern">Rail + Shelves</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Rails</span>
+                                <span class="spec-value-modern">2-4 Hanging</span>
+                            </div>
+                            <div class="spec-item-modern">
+                                <span class="spec-label-modern">Capacity</span>
+                                <span class="spec-value-modern">100kg Total</span>
+                            </div>
+                        </div>
+
+                        <div class="color-palette">
+                            <span class="color-palette-label">Colors:</span>
+                            <div class="color-dot selected" style="background: #c0c0c0;"></div>
+                            <div class="color-dot" style="background: #2d3436;"></div>
+                            <div class="color-dot" style="background: #ffffff; border: 2px solid #e5e7eb;"></div>
+                        </div>
+
+                        <div class="material-chips">
+                            <span class="material-chip selected">Chrome Plated</span>
+                            <span class="material-chip">Stainless Steel</span>
+                        </div>
+
+                        <div class="product-actions-modern">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Bedsheet%20Garment%20Hanging%20Rack"
+                                class="btn-modern-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                                Get Quote on WhatsApp
+                            </a>
+                            <button class="btn-modern-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section"
+        style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 5rem 2rem; margin: 5rem 0; border-radius: 24px;">
+        <div class="container">
+            <div style="text-align: center; color: white;">
+                <h2 style="font-size: 3rem; font-weight: 900; color: white; margin-bottom: 1.5rem;">Need a Custom
+                    Solution?</h2>
+                <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.9);">
+                    We manufacture custom racks tailored to your exact requirements. Get in touch for a personalized
+                    quote.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn"
+                        style="background: white; color: #1e3a8a; padding: 1.25rem 2.5rem; font-size: 1.125rem;">Request
+                        Custom Quote</a>
+                    <a href="https://wa.me/919894060467?text=Hi%2C%20I%20need%20a%20custom%20rack%20solution"
+                        class="btn"
+                        style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 1.25rem 2.5rem; font-size: 1.125rem;">Chat
+                        on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>AK Racks</h3>
+                    <p>Premium display solutions for retail, supermarkets, and industrial applications. Manufactured in
+                        Trichy with precision and care.</p>
+                    <p style="margin-top: 1rem;"><strong>Phone:</strong> +91 98940 60467</p>
+                    <p><strong>Email:</strong> sales@akracks.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products-catalog.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Product Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#supermarket">Supermarket Racks</a></li>
+                        <li><a href="#fruits">Fruit & Vegetable</a></li>
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#pharmacy">Pharmacy</a></li>
+                        <li><a href="#warehouse">Warehouse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 Trichy, Tamil Nadu India</p>
+                    <p>📞 +91 98940 60467</p>
+                    <p>📧 sales@akracks.com</p>
+                    <p>🌐 www.akracks.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AK Racks. All rights reserved. | Next Step Display Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20your%20racks" class="whatsapp-float"
+        aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Category filter functionality
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const productCards = document.querySelectorAll('.product-card-modern');
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const category = pill.dataset.category;
+
+                // Update active pill
+                filterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                // Filter products
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Color dot selection
+        document.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', function () {
+                this.closest('.color-palette').querySelectorAll('.color-dot').forEach(d => d.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Material chip selection
+        document.querySelectorAll('.material-chip').forEach(chip => {
+            chip.addEventListener('click', function () {
+                this.closest('.material-chips').querySelectorAll('.material-chip').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

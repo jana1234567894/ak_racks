@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products by Industry - AK Racks Trichy | Customized Rack Solutions</title>
+    <meta name="description"
+        content="Browse our complete range of racks categorized by industry - Grocery, Supermarket, Retail, Warehouse, Pharmacy, and more. Custom colors, materials, and sizes available.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .category-nav {
+            position: sticky;
+            top: 80px;
+            background: var(--white);
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-tab {
+            padding: 0.875rem 1.5rem;
+            background: var(--off-white);
+            border: 2px solid transparent;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition-fast);
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: var(--accent-orange);
+        }
+
+        .category-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card-detailed {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-medium);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 0;
+        }
+
+        .product-card-detailed:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+        }
+
+        .product-image-section {
+            background: var(--off-white);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-details-section {
+            padding: 2rem;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-range {
+            font-size: 0.875rem;
+            color: var(--steel-gray);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .spec-label {
+            font-size: 0.8125rem;
+            color: var(--steel-gray);
+            font-weight: 500;
+        }
+
+        .spec-value {
+            font-size: 0.9375rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .color-options {
+            margin: 1.5rem 0;
+        }
+
+        .color-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-orange);
+        }
+
+        .color-swatch.selected {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+        }
+
+        .color-swatch::after {
+            content: attr(data-color);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            white-space: nowrap;
+            color: var(--steel-gray);
+        }
+
+        .material-options {
+            display: flex;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .material-badge {
+            padding: 0.5rem 1rem;
+            background: var(--off-white);
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .material-badge:hover,
+        .material-badge.selected {
+            background: var(--accent-orange);
+            color: var(--white);
+            border-color: var(--accent-orange);
+        }
+
+        .feature-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .feature-tag {
+            padding: 0.375rem 0.75rem;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 968px) {
+            .product-card-detailed {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AK <span>Racks</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products-new.html" class="nav-link active">Products</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Products by Industry</h1>
+                <p class="hero-subtitle">Choose from our extensive range of customized rack solutions designed
+                    specifically for your industry. Available in multiple colors, materials, and sizes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="category-tabs">
+            <a href="#grocery" class="category-tab active">🛒 Grocery & Supermarket</a>
+            <a href="#retail" class="category-tab">👕 Retail & Clothing</a>
+            <a href="#warehouse" class="category-tab">📦 Warehouse & Industrial</a>
+            <a href="#pharmacy" class="category-tab">💊 Pharmacy & Medical</a>
+            <a href="#electronics" class="category-tab">📱 Electronics & Mobile</a>
+            <a href="#bakery" class="category-tab">🍞 Bakery & Food</a>
+        </div>
+    </div>
+
+    <!-- CATEGORY 1: GROCERY & SUPERMARKET -->
+    <section id="grocery" class="category-section section-alt">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">🛒</div>
+                <h2 class="section-title">Grocery & Supermarket Racks</h2>
+                <p class="section-description">Heavy-duty display racks designed for grocery stores and supermarkets</p>
+            </div>
+
+            <div style="display: grid; gap: 2rem;">
+
+                <!-- Product 1: Standard Supermarket Display Rack -->
+                <div class="product-card-detailed">
+                    <div class="product-image-section">
+                        <img src="assets/images/hero.png" alt="Standard Supermarket Display Rack"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="product-details-section">
+                        <h3 class="product-name">Standard Supermarket Display Rack</h3>
+                        <div class="product-price">
+                            ₹ 2,400 - ₹ 3,200
+                            <span class="price-range">/ Piece (Varies by size)</span>
+                        </div>
+
+                        <div class="feature-tags">
+                            <span class="feature-tag">✓ Adjustable Shelves</span>
+                            <span class="feature-tag">✓ Heavy Duty</span>
+                            <span class="feature-tag">✓ Easy Assembly</span>
+                            <span class="feature-tag">✓ 1 Year Warranty</span>
+                        </div>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Height</span>
+                                <span class="spec-value">4ft / 5ft / 6ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Length</span>
+                                <span class="spec-value">3ft / 4ft / 5ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">150-200 kg/shelf</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Shelves</span>
+                                <span class="spec-value">4-6 Adjustable</span>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <div class="color-label">Available Colors:</div>
+                            <div class="color-swatches">
+                                <div class="color-swatch selected"
+                                    style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"
+                                    data-color="Grey+Orange"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #ffffff 50%, #ff6b35 50%);"
+                                    data-color="White+Orange"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #2d3436 50%, #ffd700 50%);"
+                                    data-color="Black+Gold"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #3498db 50%, #ffffff 50%);"
+                                    data-color="Blue+White"></div>
+                                <div class="color-swatch" style="background: #2ecc71;" data-color="Green"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-label">Material Options:</div>
+                            <div class="material-options">
+                                <span class="material-badge selected">Medium Duty Steel</span>
+                                <span class="material-badge">Heavy Duty Steel</span>
+                                <span class="material-badge">Stainless Steel</span>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Standard%20Supermarket%20Display%20Rack"
+                                class="btn btn-whatsapp">Get Quote</a>
+                            <a href="product-detail.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Double-Sided Supermarket Rack -->
+                <div class="product-card-detailed">
+                    <div class="product-image-section">
+                        <img src="assets/images/department-racks.png" alt="Double-Sided Supermarket Rack"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="product-details-section">
+                        <h3 class="product-name">Double-Sided Supermarket Rack (Center Gondola)</h3>
+                        <div class="product-price">
+                            ₹ 4,800 - ₹ 6,500
+                            <span class="price-range">/ Piece (Varies by size)</span>
+                        </div>
+
+                        <div class="feature-tags">
+                            <span class="feature-tag">✓ Double Display</span>
+                            <span class="feature-tag">✓ Space Efficient</span>
+                            <span class="feature-tag">✓ Wire Baskets</span>
+                            <span class="feature-tag">✓ Modular Design</span>
+                        </div>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Height</span>
+                                <span class="spec-value">5ft / 6ft / 7ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Length</span>
+                                <span class="spec-value">4ft / 5ft / 6ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">200-250 kg/shelf</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Shelves per Side</span>
+                                <span class="spec-value">4-5 Adjustable</span>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <div class="color-label">Available Colors:</div>
+                            <div class="color-swatches">
+                                <div class="color-swatch selected"
+                                    style="background: linear-gradient(135deg, #808080 50%, #ff6b35 50%);"
+                                    data-color="Grey+Orange"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #ffffff 50%, #3498db 50%);"
+                                    data-color="White+Blue"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #2d3436 50%, #e74c3c 50%);"
+                                    data-color="Black+Red"></div>
+                                <div class="color-swatch" style="background: #ffffff; border: 2px solid #ccc;"
+                                    data-color="All White"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-label">Material Options:</div>
+                            <div class="material-options">
+                                <span class="material-badge selected">Heavy Duty Steel</span>
+                                <span class="material-badge">Stainless Steel</span>
+                                <span class="material-badge">Powder Coated MS</span>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Double-Sided%20Supermarket%20Rack"
+                                class="btn btn-whatsapp">Get Quote</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Vegetable & Fruit Display Rack -->
+                <div class="product-card-detailed">
+                    <div class="product-image-section">
+                        <img src="assets/images/vegetable-racks.png" alt="Vegetable & Fruit Display Rack"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="product-details-section">
+                        <h3 class="product-name">Vegetable & Fruit Display Rack (Tiered)</h3>
+                        <div class="product-price">
+                            ₹ 2,800 - ₹ 3,800
+                            <span class="price-range">/ Piece (Varies by size)</span>
+                        </div>
+
+                        <div class="feature-tags">
+                            <span class="feature-tag">✓ Slanted Shelves</span>
+                            <span class="feature-tag">✓ Better Visibility</span>
+                            <span class="feature-tag">✓ Easy Access</span>
+                            <span class="feature-tag">✓ Water Drainage</span>
+                        </div>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Height</span>
+                                <span class="spec-value">3ft / 4ft / 5ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Length</span>
+                                <span class="spec-value">4ft / 5ft / 6ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Shelf Type</span>
+                                <span class="spec-value">Wire Mesh / Solid</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Tiers</span>
+                                <span class="spec-value">3-4 Slanted Tiers</span>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <div class="color-label">Available Colors:</div>
+                            <div class="color-swatches">
+                                <div class="color-swatch selected" style="background: #2ecc71;" data-color="Green">
+                                </div>
+                                <div class="color-swatch" style="background: #3498db;" data-color="Blue"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #808080 50%, #2ecc71 50%);"
+                                    data-color="Grey+Green"></div>
+                                <div class="color-swatch" style="background: #e74c3c;" data-color="Red"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-label">Material Options:</div>
+                            <div class="material-options">
+                                <span class="material-badge selected">Medium Duty Steel</span>
+                                <span class="material-badge">Stainless Steel</span>
+                                <span class="material-badge">Galvanized Steel</span>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Vegetable%20%26%20Fruit%20Display%20Rack"
+                                class="btn btn-whatsapp">Get Quote</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY 2: RETAIL & CLOTHING -->
+    <section id="retail" class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">👕</div>
+                <h2 class="section-title">Retail & Clothing Store Racks</h2>
+                <p class="section-description">Stylish and durable racks for apparel and retail stores</p>
+            </div>
+
+            <div style="display: grid; gap: 2rem;">
+
+                <!-- Product 4: Garment Display Rack -->
+                <div class="product-card-detailed">
+                    <div class="product-image-section">
+                        <img src="assets/images/custom-racks.png" alt="Garment Display Rack"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="product-details-section">
+                        <h3 class="product-name">Garment Display Rack with Hanging Rail</h3>
+                        <div class="product-price">
+                            ₹ 3,500 - ₹ 5,200
+                            <span class="price-range">/ Piece (Varies by size)</span>
+                        </div>
+
+                        <div class="feature-tags">
+                            <span class="feature-tag">✓ Hanging Rod</span>
+                            <span class="feature-tag">✓ Lower Shelves</span>
+                            <span class="feature-tag">✓ Modern Design</span>
+                            <span class="feature-tag">✓ Mobile Wheels Option</span>
+                        </div>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Height</span>
+                                <span class="spec-value">5ft / 6ft / 7ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Width</span>
+                                <span class="spec-value">3ft / 4ft / 5ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Rod Length</span>
+                                <span class="spec-value">3ft-5ft (Adjustable)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">Up to 100 kg</span>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <div class="color-label">Available Colors:</div>
+                            <div class="color-swatches">
+                                <div class="color-swatch selected" style="background: #2d3436;" data-color="Black">
+                                </div>
+                                <div class="color-swatch" style="background: #ffffff; border: 2px solid #ccc;"
+                                    data-color="White"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #2d3436 50%, #ffd700 50%);"
+                                    data-color="Black+Gold"></div>
+                                <div class="color-swatch" style="background: #c0c0c0;" data-color="Silver"></div>
+                                <div class="color-swatch" style="background: #ff69b4;" data-color="Rose Gold"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-label">Material Options:</div>
+                            <div class="material-options">
+                                <span class="material-badge selected">Powder Coated Steel</span>
+                                <span class="material-badge">Stainless Steel</span>
+                                <span class="material-badge">Chrome Finished</span>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Garment%20Display%20Rack"
+                                class="btn btn-whatsapp">Get Quote</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Wall-Mounted Display Rack -->
+                <div class="product-card-detailed">
+                    <div class="product-image-section">
+                        <img src="assets/images/gallery-1.png" alt="Wall Display Rack"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="product-details-section">
+                        <h3 class="product-name">Wall-Mounted Display Shelf System</h3>
+                        <div class="product-price">
+                            ₹ 1,800 - ₹ 2,800
+                            <span class="price-range">/ Running Feet</span>
+                        </div>
+
+                        <div class="feature-tags">
+                            <span class="feature-tag">✓ Space Saving</span>
+                            <span class="feature-tag">✓ Easy Installation</span>
+                            <span class="feature-tag">✓ Modular</span>
+                            <span class="feature-tag">✓ Multiple Brackets</span>
+                        </div>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Shelf Depth</span>
+                                <span class="spec-value">10" / 12" / 14"</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Length</span>
+                                <span class="spec-value">Custom (per ft)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">50-80 kg/shelf</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mounting</span>
+                                <span class="spec-value">Wall Bracket System</span>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <div class="color-label">Available Colors:</div>
+                            <div class="color-swatches">
+                                <div class="color-swatch selected" style="background: #ffffff; border: 2px solid #ccc;"
+                                    data-color="White"></div>
+                                <div class="color-swatch" style="background: #2d3436;" data-color="Black"></div>
+                                <div class="color-swatch" style="background: #8B4513;" data-color="Wood Finish"></div>
+                                <div class="color-swatch" style="background: #c0c0c0;" data-color="Silver"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-label">Material Options:</div>
+                            <div class="material-options">
+                                <span class="material-badge selected">MS Steel</span>
+                                <span class="material-badge">Aluminum</span>
+                                <span class="material-badge">Stainless Steel</span>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Wall-Mounted%20Display%20Shelf"
+                                class="btn btn-whatsapp">Get Quote</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY 3: WAREHOUSE & INDUSTRIAL -->
+    <section id="warehouse" class="category-section section-alt">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon">📦</div>
+                <h2 class="section-title">Warehouse & Industrial Storage</h2>
+                <p class="section-description">Heavy-duty pallet racks and industrial storage solutions</p>
+            </div>
+
+            <div style="display: grid; gap: 2rem;">
+
+                <!-- Product 6: Pallet Racking System -->
+                <div class="product-card-detailed">
+                    <div class="product-image-section">
+                        <img src="assets/images/warehouse-racks.png" alt="Pallet Racking System"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="product-details-section">
+                        <h3 class="product-name">Heavy Duty Pallet Racking System</h3>
+                        <div class="product-price">
+                            ₹ 8,500 - ₹ 15,000
+                            <span class="price-range">/ Set (Varies by height)</span>
+                        </div>
+
+                        <div class="feature-tags">
+                            <span class="feature-tag">✓ 2000kg+ Capacity</span>
+                            <span class="feature-tag">✓ Forklift Compatible</span>
+                            <span class="feature-tag">✓ Modular</span>
+                            <span class="feature-tag">✓ Safety Certified</span>
+                        </div>
+
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Height</span>
+                                <span class="spec-value">8ft / 10ft / 12ft / 15ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bay Width</span>
+                                <span class="spec-value">8ft / 9ft / 10ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">2000-3000 kg/level</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Beam Levels</span>
+                                <span class="spec-value">2-4 Adjustable</span>
+                            </div>
+                        </div>
+
+                        <div class="color-options">
+                            <div class="color-label">Available Colors:</div>
+                            <div class="color-swatches">
+                                <div class="color-swatch selected"
+                                    style="background: linear-gradient(135deg, #3498db 50%, #ff6b35 50%);"
+                                    data-color="Blue+Orange"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #2ecc71 50%, #808080 50%);"
+                                    data-color="Green+Grey"></div>
+                                <div class="color-swatch"
+                                    style="background: linear-gradient(135deg, #e74c3c 50%, #2d3436 50%);"
+                                    data-color="Red+Black"></div>
+                                <div class="color-swatch" style="background: #ffd700;" data-color="Yellow"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-label">Material Options:</div>
+                            <div class="material-options">
+                                <span class="material-badge selected">Heavy Duty Steel (6mm)</span>
+                                <span class="material-badge">Extra Heavy Duty (8mm)</span>
+                                <span class="material-badge">Hot Rolled Steel</span>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20Heavy%20Duty%20Pallet%20Racking"
+                                class="btn btn-whatsapp">Get Quote</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Can't Find What You're Looking For?</h2>
+                <p class="section-description">We specialize in custom rack manufacturing. Share your requirements and
+                    we'll design the perfect solution.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Request Custom Quote</a>
+                    <a href="https://wa.me/919894060467?text=Hi%2C%20I%20need%20a%20custom%20rack%20solution"
+                        class="btn btn-whatsapp">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>AK Racks</h3>
+                    <p>Leading manufacturer of supermarket display racks, warehouse storage solutions, and custom retail
+                        fixtures in South India.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products-new.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 Trichy, Tamil Nadu, India</p>
+                    <p>📞 +91 98940 60467</p>
+                    <p>📧 info@akracks.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AK Racks. All rights reserved. | Manufactured with precision in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919894060467?text=Hi%2C%20I'm%20interested%20in%20your%20racks" class="whatsapp-float"
+        aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Smooth scroll to categories
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = tab.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                // Update active tab
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Smooth scroll
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Color swatch selection
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function () {
+                this.closest('.color-swatches').querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Material badge selection
+        document.querySelectorAll('.material-badge').forEach(badge => {
+            badge.addEventListener('click', function () {
+                this.closest('.material-options').querySelectorAll('.material-badge').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+
+</html>

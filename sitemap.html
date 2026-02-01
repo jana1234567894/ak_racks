@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sitemap for AK Racks - Navigate all pages including products, services, gallery, testimonials, and contact information.">
+    <title>Sitemap - AK Racks Trichy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .sitemap-section {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .sitemap-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-orange);
+        }
+
+        .sitemap-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sitemap-links li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sitemap-links li:last-child {
+            border-bottom: none;
+        }
+
+        .sitemap-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .sitemap-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .sitemap-links a::before {
+            content: "→";
+            color: var(--accent-orange);
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AK <span>RACKS</span></a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20a%20quote%20for%20racks"
+                        class="btn btn-whatsapp" target="_blank">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Get Quote
+                    </a></li>
+            </ul>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 40vh; margin-top: 80px;">
+        <img src="assets/images/hero.png" alt="Sitemap" class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Sitemap</h1>
+                <p class="hero-subtitle">Easy navigation to all pages on our website</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sitemap Content -->
+    <section class="section">
+        <div class="container">
+            <div class="sitemap-grid">
+
+                <!-- Main Pages -->
+                <div class="sitemap-section">
+                    <h3>Main Pages</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Customer Testimonials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Categories -->
+                <div class="sitemap-section">
+                    <h3>Product Categories</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="products.html#supermarket">Supermarket Display Racks</a></li>
+                        <li><a href="products.html#department">Department Store Racks</a></li>
+                        <li><a href="products.html#vegetable">Vegetable & Fruit Display Racks</a></li>
+                        <li><a href="products.html#warehouse">Warehouse Storage Racks</a></li>
+                        <li><a href="products.html#custom">Custom Rack Solutions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="sitemap-section">
+                    <h3>Our Services</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="services.html#manufacturing">Custom Manufacturing</a></li>
+                        <li><a href="services.html#installation">Professional Installation</a></li>
+                        <li><a href="services.html#consultation">Design Consultation</a></li>
+                        <li><a href="services.html#delivery">Delivery & Logistics</a></li>
+                        <li><a href="services.html#maintenance">Maintenance & Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="sitemap-section">
+                    <h3>Company Information</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="about.html">Company Profile</a></li>
+                        <li><a href="about.html#mission">Our Mission & Vision</a></li>
+                        <li><a href="testimonials.html">Customer Reviews</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Options -->
+                <div class="sitemap-section">
+                    <h3>Get In Touch</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="tel:+919876543210">Call: +91-98765-43210</a></li>
+                        <li><a href="mailto:info@akracks.com">Email: info@akracks.com</a></li>
+                        <li><a href="https://wa.me/919876543210" target="_blank">WhatsApp Chat</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location -->
+                <div class="sitemap-section">
+                    <h3>Location & Coverage</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="contact.html#location">Trichy Factory Location</a></li>
+                        <li><a href="about.html">Service Areas in Tamil Nadu</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>AK RACKS</h3>
+                    <p>Premium supermarket and storage rack manufacturers based in Trichy, Tamil Nadu. Quality you can
+                        trust.</p>
+                    <p style="margin-top: 1rem;"><strong>Phone:</strong> +91-98765-43210</p>
+                    <p><strong>Email:</strong> info@akracks.com</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Our Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html#supermarket">Supermarket Racks</a></li>
+                        <li><a href="products.html#department">Department Store Racks</a></li>
+                        <li><a href="products.html#vegetable">Vegetable & Fruit Racks</a></li>
+                        <li><a href="products.html#warehouse">Warehouse Racks</a></li>
+                        <li><a href="products.html#custom">Custom Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <p>Industrial Area<br>Trichy, Tamil Nadu 620001<br>India</p>
+                    <p style="margin-top: 1rem;"><strong>Hours:</strong><br>Mon - Sat: 9:00 AM - 6:00 PM<br>Sunday:
+                        Closed</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AK Racks. All rights reserved. | Supermarket & Storage Rack Manufacturers in Trichy,
+                    Tamil Nadu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20information%20about%20your%20racks"
+        class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
