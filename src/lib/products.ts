@@ -95,7 +95,7 @@ export const productCategories: ProductCategory[] = [
         products: [
             { id: 'er-1', name: 'Electronic Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Standard electronic display rack', image: '/images/gallery/electronic-racks/IMG20220616195407.jpg' },
             { id: 'er-2', name: 'Glass Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Tempered glass display rack', image: '/images/gallery/electronic-racks/IMG20220414185623.jpg' },
-            { id: 'er-3', name: 'TV & AC & Water Heater Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Heavy-duty appliance display', image: '/images/gallery/electronic-racks/IMG-20190103-WA0008.jpg' },
+            { id: 'er-3', name: 'Heavy Electronics Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Heavy-duty appliance display', image: '/images/gallery/electronic-racks/IMG-20190103-WA0008.jpg' },
             { id: 'er-4', name: 'Bar Hanging Racks', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Hanging display system', image: '/images/gallery/electronic-racks/IMG20220622131431.jpg' },
             { id: 'er-5', name: 'Brand Display Board Rack', category: 'Electronic Racks', categorySlug: 'electronic-racks', description: 'Brand promotion display', image: '/images/gallery/electronic-racks/IMG20220616195422.jpg' },
         ]
