@@ -32,7 +32,7 @@ const googleReviews = [
     },
 ];
 
-const GOOGLE_REVIEWS_LINK = 'https://google.com/maps/place/AK+Racks+-+Racks+Manufacturer/@10.8288605,78.6830049,17z/data=!4m6!3m5!1s0x3baaf5b2728bb98d:0xdd38eccbf2e74766!8m2!3d10.8288605!4d78.6832992!16s%2Fg%2F11y5lwdz05';
+const GOOGLE_REVIEWS_LINK = 'https://maps.app.goo.gl/YbwsiyWZchHrwX6p8';
 
 function StarRating({ rating }: { rating: number }) {
     return (
