@@ -107,7 +107,7 @@ export const productCategories: ProductCategory[] = [
         image: '/images/pharmacy-rack.png',
         products: [
             { id: 'ph-1', name: 'Pharmacy Rack', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Standard pharmacy display rack', image: '/images/pharmacy-rack.png' },
-            { id: 'ph-2', name: 'Clock House', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Specialty display unit', image: '/images/wall-channel-rack.png' },
+            { id: 'ph-2', name: 'Clock House', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Specialty display unit', image: '/images/gallery/gallery/clock house.jpg' },
             { id: 'ph-3', name: 'Photo Frame Rack', category: 'Pharmacy Racks', categorySlug: 'pharmacy-racks', description: 'Photo frame display system', image: '/images/accessories-rack.png' },
         ]
     },
@@ -118,10 +118,12 @@ export const productCategories: ProductCategory[] = [
         image: '/images/fancy-store-rack.png',
         products: [
             { id: 'fs-1', name: 'Fancy Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Multi-display fancy store rack', image: '/images/gallery/fancy-store-racks/IMG-20240406-WA0003.jpg' },
-            { id: 'fs-2', name: 'Stationery Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Stationery display system', image: '/images/gallery/fancy-store-racks/IMG20220623111501.jpg' },
+            { id: 'fs-2', name: 'Stationery Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Stationery display system', image: '/images/gallery/gallery/stationary.jpg' },
             { id: 'fs-3', name: 'Display Counter', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Front display counter', image: '/images/gallery/fancy-store-racks/IMG20230528111134.jpg' },
-            { id: 'fs-4', name: 'Bag Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Bag display rack', image: '/images/gallery/pharmacy-racks/IMG20230528111627.jpg' },
-            { id: 'fs-5', name: 'Chapplas Hanging Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Footwear hanging display', image: '/images/gallery/pharmacy-racks/IMG20221206140151.jpg' },
+            { id: 'fs-4', name: 'Bag Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Bag display rack', image: '/images/gallery/gallery/bagrack.jpg' },
+            { id: 'fs-5', name: 'Chapplas Hanging Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Footwear hanging display', image: '/images/gallery/gallery/chappel-rack.jpg' },
+            { id: 'fs-6', name: 'Shoe Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Dedicated shoe display rack', image: '/images/gallery/gallery/shoe-rack.jpg' },
+            { id: 'fs-7', name: 'Toys Hanger Rack', category: 'Fancy Store Racks', categorySlug: 'fancy-store-racks', description: 'Display rack for toys', image: '/images/gallery/gallery/toys-hanger-rack.jpg' },
         ]
     },
     {
@@ -137,6 +139,7 @@ export const productCategories: ProductCategory[] = [
             { id: 'gr-5', name: 'Hanger Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Clothing hanger system', image: '/images/gallery/garments-racks/IMG20221218134158.jpg' },
             { id: 'gr-6', name: 'Glass Shelf Rack', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Elegant glass shelf display', image: '/images/gallery/garments-racks/IMG20210910165209.jpg' },
             { id: 'gr-7', name: 'Four Way Hanger', category: 'Garments Racks', categorySlug: 'garments-racks', description: '4-way clothing hanger stand', image: '/images/gallery/garments-racks/IMG20221218134134.jpg' },
+            { id: 'gr-8', name: 'Sports Shop Hanger', category: 'Garments Racks', categorySlug: 'garments-racks', description: 'Specialized hanger for sports gear', image: '/images/gallery/gallery/sports-shop hanger.jpg' },
         ]
     },
     {
@@ -156,16 +159,13 @@ export const productCategories: ProductCategory[] = [
         description: 'Essential retail accessories including counters, trolleys, and bins.',
         image: '/images/accessories-rack.png',
         products: [
-            { id: 'ac-1', name: 'Cash Counter', category: 'Accessories', categorySlug: 'accessories', description: 'Professional cash counter', image: '/images/accessories-rack.png' },
-            { id: 'ac-2', name: 'Front Counter', category: 'Accessories', categorySlug: 'accessories', description: 'Reception and billing counter', image: '/images/pharmacy-rack.png' },
-            { id: 'ac-3', name: 'Trolley', category: 'Accessories', categorySlug: 'accessories', description: 'Shopping trolley', image: '/images/supermarket-rack.png' },
-            { id: 'ac-4', name: 'Dumb Bin', category: 'Accessories', categorySlug: 'accessories', description: 'Promotional dump bin', image: '/images/snacks-rack.png' },
-            { id: 'ac-5', name: 'Wheel Basket', category: 'Accessories', categorySlug: 'accessories', description: 'Rolling shopping basket', image: '/images/center-rack.png' },
-            { id: 'ac-6', name: 'Pickup Basket', category: 'Accessories', categorySlug: 'accessories', description: 'Hand-carry shopping basket', image: '/images/corner-rack.png' },
-            { id: 'ac-7', name: 'Impulse Bin', category: 'Accessories', categorySlug: 'accessories', description: 'Checkout impulse display', image: '/images/masala-rack.png' },
-            { id: 'ac-8', name: 'Alligator Bin', category: 'Accessories', categorySlug: 'accessories', description: 'Large promotional bin', image: '/images/oil-rack.png' },
-            { id: 'ac-9', name: 'Square Broom Stand', category: 'Accessories', categorySlug: 'accessories', description: 'Square broom display stand', image: '/images/hook-rack.png' },
-            { id: 'ac-10', name: 'Broom Stand', category: 'Accessories', categorySlug: 'accessories', description: 'Standard broom display', image: '/images/wall-rack-mesh.png' },
+            { id: 'ac-1', name: 'Cash Counter', category: 'Accessories', categorySlug: 'accessories', description: 'Professional cash counter', image: '/images/gallery/accessories/cash counter.jpg' },
+            { id: 'ac-3', name: 'Trolley', category: 'Accessories', categorySlug: 'accessories', description: 'Shopping trolley', image: '/images/gallery/accessories/trolley.jpg' },
+            { id: 'ac-5', name: 'Wheel Basket', category: 'Accessories', categorySlug: 'accessories', description: 'Rolling shopping basket', image: '/images/gallery/accessories/Wheel Basket.jpg' },
+            { id: 'ac-6', name: 'Pickup Basket', category: 'Accessories', categorySlug: 'accessories', description: 'Hand-carry shopping basket', image: '/images/gallery/accessories/Pickup Basket.jpg' },
+            { id: 'ac-7', name: 'Impulse Bin', category: 'Accessories', categorySlug: 'accessories', description: 'Checkout impulse display', image: '/images/gallery/accessories/impulse-bin.jpg' },
+            { id: 'ac-9', name: 'Square Broom Stand', category: 'Accessories', categorySlug: 'accessories', description: 'Square broom display stand', image: '/images/gallery/accessories/Square Broom Stand.jpg' },
+            { id: 'ac-10', name: 'Broom Stand', category: 'Accessories', categorySlug: 'accessories', description: 'Standard broom display', image: '/images/gallery/accessories/Broom Stand.jpg' },
         ]
     },
 ];
