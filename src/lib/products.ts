@@ -47,7 +47,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Supermarket Racks',
         slug: 'supermarket-racks',
         description: 'Premium display racks designed for supermarkets with maximum visibility and easy customer access.',
-        image: '/images/supermarket-rack.png',
+        image: '/images/supermarket-rack-modern.png',
         products: [
             { id: 'sm-1', name: 'Corner Rack', category: 'Supermarket Racks', categorySlug: 'supermarket-racks', description: 'Space-efficient corner display solution', image: '/images/gallery/supermarket-racks/12Corner Rack.JPG' },
             { id: 'sm-2', name: 'Wall Channel Rack', category: 'Supermarket Racks', categorySlug: 'supermarket-racks', description: 'Wall-mounted channel rack system', image: '/images/gallery/supermarket-racks/8Wall Channel Rack.JPG' },
