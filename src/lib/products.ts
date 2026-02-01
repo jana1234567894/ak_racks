@@ -67,7 +67,7 @@ export const productCategories: ProductCategory[] = [
         name: 'Hyper Store Racks',
         slug: 'hyper-store-racks',
         description: 'Large-format display and storage solutions for hyper stores and large retail spaces.',
-        image: '/images/hyper-store-rack.png',
+        image: '/images/hyper-store-rack-modern.png',
         products: [
             { id: 'hs-1', name: 'Single Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Single-sided storage solution', image: '/images/gallery/hyper-store-racks/IMG-20221020-WA0008.jpg' },
             { id: 'hs-2', name: 'Wall Hyper Storage Rack', category: 'Hyper Store Racks', categorySlug: 'hyper-store-racks', description: 'Wall-mounted hyper storage', image: '/images/gallery/hyper-store-racks/Wall Hyper Storage Rack.jpg' },

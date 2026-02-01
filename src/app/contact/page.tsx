@@ -192,7 +192,7 @@ ${formData.message}
                                         <a href={`tel:${siteConfig.phone}`} className="text-orange-400 hover:text-orange-300 text-lg">
                                             {siteConfig.phone}
                                         </a>
-                                        <p className="text-slate-500 text-sm mt-1">Mon - Sat, 9:00 AM - 6:00 PM</p>
+                                        <p className="text-slate-500 text-sm mt-1">Mon - Sat, 9:00 AM - 10:00 PM</p>
                                     </div>
                                 </div>
 

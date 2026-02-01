@@ -108,7 +108,7 @@ export const structuredData = {
             name: 'Tamil Nadu',
         },
         priceRange: '₹₹',
-        openingHours: 'Mo-Sa 09:00-18:00',
+        openingHours: 'Mo-Sa 09:00-22:00',
         image: `${siteConfig.url}/images/hero.png`,
         sameAs: [],
     },
