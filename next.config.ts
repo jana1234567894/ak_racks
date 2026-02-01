@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [],
     formats: ['image/avif', 'image/webp'],
-    qualities: [75, 85],
   },
   experimental: {
     optimizePackageImports: ['framer-motion'],
