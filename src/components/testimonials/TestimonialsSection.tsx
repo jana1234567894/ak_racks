@@ -210,7 +210,7 @@ export function TestimonialsSection() {
                 >
                     <div className="flex items-center justify-center gap-3 mb-8">
                         <GoogleIcon />
-                        <h3 className="text-xl font-bold text-slate-800">Real Customer Reviews from Google</h3>
+                        <h3 className="text-xl font-bold text-slate-800">Google Reviews</h3>
                     </div>
 
                     {/* Google Review Cards */}
