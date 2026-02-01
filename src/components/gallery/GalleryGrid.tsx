@@ -33,8 +33,8 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                         key={category}
                         onClick={() => setActiveCategory(category)}
                         className={`px-6 py-2 rounded-full font-medium transition-all ${activeCategory === category
-                                ? 'bg-orange-600 text-white shadow-lg shadow-orange-500/25'
-                                : 'bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-600 border border-slate-200'
+                            ? 'bg-orange-600 text-white shadow-lg shadow-orange-500/25'
+                            : 'bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-600 border border-slate-200'
                             }`}
                     >
                         {category}
@@ -45,7 +45,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
             {/* Masonry Grid */}
             <motion.div
                 layout
-                className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
+                className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-6 space-y-3 md:space-y-6"
             >
                 <AnimatePresence>
                     {filteredImages.map((image, index) => (
@@ -59,7 +59,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                             className="break-inside-avoid group cursor-pointer"
                             onClick={() => setSelectedImage(image)}
                         >
-                            <div className="relative overflow-hidden rounded-2xl bg-slate-100 shadow-md">
+                            <div className="relative overflow-hidden rounded-xl bg-slate-100 shadow-md">
                                 <Image
                                     src={image.src}
                                     alt={image.alt}
